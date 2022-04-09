@@ -21,6 +21,12 @@ elseif sys == "OSX" then
 end
 local lib = "libraylib-" .. string.lower(sys .. '_' .. arch) .. "." .. ext
 
+local raylib
+if not pcall(function() raylib = ffi.load(lib) end) then
+print("Could not load raylib for your platform. Get it here:\nhttps://github.com/notnullgames/raylua/releases/download/dll/" .. lib .. "\nand save it in this directory.")
+os.exit()
+end
+
 -- raylib.h
 ffi.cdef([[
 /**********************************************************************************************
@@ -2342,12 +2348,6 @@ float EaseElasticIn(float t, float b, float c, float d);
 float EaseElasticOut(float t, float b, float c, float d);
 float EaseElasticInOut(float t, float b, float c, float d);
 ]])
-
-local raylib
-if not pcall(function() raylib = ffi.load(lib) end) then
-print("Could not load raylib for your platform. Get it here:\nhttps://github.com/notnullgames/raylua/releases/" .. lib .. "\nand save it in this directory.")
-os.exit()
-end
 
 local mt = { __index = raylib }
 local rl = setmetatable({}, mt)
