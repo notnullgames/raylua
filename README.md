@@ -5,7 +5,8 @@
 
 ---
 
-This is based on [Rabios/raylua](https://github.com/Rabios/raylua), but simplified, and setup for mac M1, and PI (64 and 32bit.) You will need a [raylib dynamic lib](https://github.com/notnullgames/raylua/releases/tag/dll) and `luajit` installed on your system.`
+This is based on [Rabios/raylua](https://github.com/Rabios/raylua), but simplified, and setup for mac M1, and PI (64 and 32bit.) You will need a [raylib dynamic lib](https://github.com/notnullgames/raylua/releases/tag/dll) and `luajit` installed on your system.
+
 ---
 
 
